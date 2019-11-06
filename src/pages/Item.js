@@ -15,6 +15,7 @@ export default class Home extends Component {
       ),
       headerStyle:{
         borderBottomWidth:0,
+        elevation: 0,
       }
     };
   }

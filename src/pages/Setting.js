@@ -8,7 +8,7 @@ export default class Setting extends Component {
   
   render() {
     return (
-      <View style={{paddingTop:40}}>
+      <View style={{paddingTop:40,backgroundColor:'yellow'}}>
         <Text>
         </Text>
         <Button

@@ -1,11 +1,12 @@
 
-import { createAppContainer } from 'react-navigation';
+import { createAppContainer,createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import {AntDesign} from 'react-native-vector-icons';
 import Home from './src/pages/Home'
 import Setting from './src/pages/Setting'
 import Item from './src/pages/Item'
+import Login from './src/pages/Login'
 import ModalScreen from './src/components/ModalScreen'
 import React, { Component } from 'react';
 import { AppRegistry, Text, Button,View } from 'react-native';
@@ -85,4 +86,18 @@ const TabNavigator = createBottomTabNavigator(
     },
   }
 )
-export default createAppContainer(TabNavigator);
+
+const Routerstack = createSwitchNavigator(
+  {
+    Login: {
+      screen: Login,
+    },
+    Content: {
+      screen: TabNavigator,
+    }
+  },{
+    initialRouteName:'Login'
+  }
+);
+
+export default createAppContainer(Routerstack);

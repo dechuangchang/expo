@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Text, Button,View } from 'react-native';
+import { AsyncStorage, Text, Button,View } from 'react-native';
 
 import {AntDesign} from 'react-native-vector-icons';
 
@@ -42,6 +42,13 @@ export default class Home extends Component {
               title: 'title1',
               text: '这是商品2',
             });
+          }}
+        />
+        <Button
+          title="Log0ut"
+          onPress={() => {
+            AsyncStorage.removeItem('userToken')
+            this.props.navigation.navigate('Login');
           }}
         />
         
