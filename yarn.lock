@@ -4215,6 +4215,11 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.6:
   resolved "https://registry.npm.taobao.org/react-is/download/react-is-16.11.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-is%2Fdownload%2Freact-is-16.11.0.tgz#b85dfecd48ad1ce469ff558a882ca8e8313928fa"
   integrity sha1-uF3+zUitHORp/1WKiCyo6DE5KPo=
 
+react-lifecycles-compat@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.npm.taobao.org/react-lifecycles-compat/download/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+  integrity sha1-TxonOv38jzSIqMUWv9p4+HI1I2I=
+
 react-native-branch@~3.0.1:
   version "3.0.1"
   resolved "https://registry.npm.taobao.org/react-native-branch/download/react-native-branch-3.0.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-native-branch%2Fdownload%2Freact-native-branch-3.0.1.tgz#5b07b61cbd290168cd3c3662e017ebe0f356d2ca"
@@ -4234,7 +4239,7 @@ react-native-reanimated@~1.2.0:
   resolved "https://registry.npm.taobao.org/react-native-reanimated/download/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
   integrity sha1-khkielKl36TTTDJFltZybM2HQpM=
 
-react-native-safe-area-view@^0.14.1:
+react-native-safe-area-view@^0.14.1, react-native-safe-area-view@^0.14.6:
   version "0.14.8"
   resolved "https://registry.npm.taobao.org/react-native-safe-area-view/download/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
   integrity sha1-7zPEb/gWSud6ytSMMDnsnDSHPls=
@@ -4247,6 +4252,11 @@ react-native-safe-area-view@^0.14.1:
   integrity sha1-JdfqTRG9pPzeLR2nrlAnHGqmNuA=
   dependencies:
     debounce "^1.2.0"
+
+react-native-tab-view@^2.9.0:
+  version "2.10.0"
+  resolved "https://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-2.10.0.tgz#5e249e5650502010013449ffd4e5edc18a95364b"
+  integrity sha1-XiSeVlBQIBABNEn/1OXtwYqVNks=
 
 react-native-view-shot@2.6.0:
   version "2.6.0"
@@ -4324,12 +4334,27 @@ react-native-web@^0.11.7:
     xmldoc "^0.4.0"
     yargs "^9.0.0"
 
+react-navigation-drawer@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.npm.taobao.org/react-navigation-drawer/download/react-navigation-drawer-2.3.3.tgz#d7e607d5e10f2b3c40ab7dc9720228ce3f888a0f"
+  integrity sha1-1+YH1eEPKzxAq33JcgIozj+Iig8=
+
 react-navigation-stack@^1.10.3:
   version "1.10.3"
   resolved "https://registry.npm.taobao.org/react-navigation-stack/download/react-navigation-stack-1.10.3.tgz#e714e442b20427f0d2d3c18fce1f9e8cfe69be0b"
   integrity sha1-5xTkQrIEJ/DS08GPzh+ejP5pvgs=
   dependencies:
     prop-types "^15.7.2"
+
+react-navigation-tabs@^2.5.6:
+  version "2.5.6"
+  resolved "https://registry.npm.taobao.org/react-navigation-tabs/download/react-navigation-tabs-2.5.6.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freact-navigation-tabs%2Fdownload%2Freact-navigation-tabs-2.5.6.tgz#51f1a39b6c9525e6b5fe035945c243c04e53242b"
+  integrity sha1-UfGjm2yVJea1/gNZRcJDwE5TJCs=
+  dependencies:
+    hoist-non-react-statics "^3.3.0"
+    react-lifecycles-compat "^3.0.4"
+    react-native-safe-area-view "^0.14.6"
+    react-native-tab-view "^2.9.0"
 
 react-navigation@^4.0.10:
   version "4.0.10"

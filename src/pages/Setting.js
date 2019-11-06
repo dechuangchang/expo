@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { AppRegistry, Text,Button,View } from 'react-native';
 
 export default class Setting extends Component {
-  static navigationOptions = {
-    title: 'Setting',
-  };
+  
+  componentDidMount() {
+  }
+  
   render() {
     return (
-      <View>
+      <View style={{paddingTop:40}}>
         <Text>
-        Setting
         </Text>
-        
         <Button
           title="Go to Setting... again"
           onPress={() => this.props.navigation.push('Setting')}

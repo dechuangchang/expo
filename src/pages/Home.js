@@ -1,20 +1,31 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, Button,View } from 'react-native';
 
+import {AntDesign} from 'react-native-vector-icons';
+
 export default class Home extends Component {
   static navigationOptions = {
-    title: 'Home',
+    title: '首页',
+    headerStyle:{
+      borderBottomWidth:0,
+    }
   };
   render() {
     return (
-      <View>
+      <View style={{paddingTop:40}}>
         <Text>
           Home
         </Text>
+    
+        <AntDesign
+        name={'doubleright'}
+        size={30}
+        />  
         <Button
-          title="Go to Setting"
-          onPress={() => this.props.navigation.navigate('Setting')}
+          title="Go to MyModal"
+          onPress={() => this.props.navigation.navigate('MyModal')}
         />
+
         <Button
           title="Go to Item1"
           onPress={() => {

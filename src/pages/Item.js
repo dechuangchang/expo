@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, Button,View } from 'react-native';
 import LogoTitle from '../components/LogoTitle'
+import {Feather} from 'react-native-vector-icons';
 export default class Home extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       headerTitle: () => <LogoTitle title={navigation.getParam('title')}/>,
-      title: navigation.getParam('title'),
-      headerStyle: {
-        backgroundColor: '#fff',
-      },
-      headerTintColor: '#000',
-      headerTitleStyle: {
-        fontWeight: 'bold',
-      },
+      headerRight: () => (
+        <Button
+          onPress={() => alert('This is a button!')}
+          title="Info"
+          color="#333"
+        />
+      ),
+      headerStyle:{
+        borderBottomWidth:0,
+      }
     };
-  };
+  }
+  componentDidMount(){
+    
+  }
+  
   render() {
     const { navigation } = this.props;
     return (
@@ -24,8 +31,9 @@ export default class Home extends Component {
         </Text>
         <Button
           title="Update the title"
-          onPress={() => this.props.navigation.setParams({ 
-            title: 'Updated!' 
+          onPress={() => navigation.setParams({ 
+            title: 'Updated!',
+            text:'Hello'
           })}
         />
       </View>
