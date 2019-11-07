@@ -5,3 +5,10 @@ open -a Simulator
 
 elevation: 0,
 // android headerStyle 标题阴影，android5.0有效，设置为0
+
+
+清缓存
+Delete the node_modules folder - rm -rf node_modules && npm install
+Reset packager cache - rm -fr $TMPDIR/react-* or node_modules/react-native/packager/packager.sh --reset-cache
+Clear watchman watches - watchman watch-del-all
+Recreate the project from scratch

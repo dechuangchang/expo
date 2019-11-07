@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import { AsyncStorage, Text, Button,View,ImageBackground,Animated ,TouchableHighlight} from 'react-native';
+import { AsyncStorage, Text,View,ImageBackground,Animated ,TouchableHighlight} from 'react-native';
+import {Button, ThemeProvider} from 'react-native-elements';
 
-import {AntDesign} from 'react-native-vector-icons';
-export default class Home extends Component {
-  constructor() {
-    super();
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+const mapStateToProps = (state, ownProps) => {
+  console.log(state)
+  return {
+    asfc:'1'
+  }
+}
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return bindActionCreators({},dispatch)
+}
+
+class Home extends Component {
+  constructor(props) {
+    super(props);
     this.state={
       bgImg:true,
       fadeAnim: new Animated.Value(0),    
@@ -63,13 +75,10 @@ export default class Home extends Component {
        <View style={{display:'flex',width:'100%',height:'100%',alignItems:'center',justifyContent:'center'}} >
           <ImageBackground ref='ss' style={{display:'flex',width:'100%',height:'100%'}} source={this.state.bgImg? require('../../assets/timg.jpeg'):require('../../assets/timg2.jpeg')}>
             <View style={{display:'flex',width:'100%',height:'100%',alignItems:'center',justifyContent:'center'}} >
-              
-              <TouchableHighlight activeOpacity={0.5} underlayColor='rgba(0,0,0,0)' onPress={this._onLogin}>
-                <Text style={{color:'red'}}>Switch Image</Text>
-              </TouchableHighlight>
-              <TouchableHighlight activeOpacity={0.5} underlayColor='rgba(0,0,0,0)' onPress={()=>{this.props.navigation.navigate(userToken ? 'Home' : 'Login');}}>
-                <Text style={{color:'red',borderColor:'red',borderWidth:1}}>Go to Home</Text>
-              </TouchableHighlight>
+              <ThemeProvider>
+                <Button type='outline' buttonStyle={{marginBottom:10}} title="Switch Image!!"  onPress={this._onLogin}/>
+                <Button type='outline' buttonStyle={{marginTop:10}} title="Go to Home!!"  onPress={()=>{this.props.navigation.navigate(userToken ? 'Home' : 'Login');}}/>
+              </ThemeProvider>
             </View>
           </ImageBackground>
         </View>
@@ -78,3 +87,4 @@ export default class Home extends Component {
     );
   }
 };
+export default  connect(mapStateToProps, mapDispatchToProps)(Home)
