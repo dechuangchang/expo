@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { AsyncStorage, Text,View,ImageBackground,Animated ,TouchableHighlight} from 'react-native';
+import { AsyncStorage, Text,View,ImageBackground,Animated ,TouchableHighlight,} from 'react-native';
 import {Button, ThemeProvider} from 'react-native-elements';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
+  
   return {
-    asfc:'1'
+    device:state.device
   }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -23,13 +23,9 @@ class Home extends Component {
     }
   }
   
-  _bootstrapAsync = async () => {
-    const userToken = await AsyncStorage.getItem('userToken');
-    this.props.navigation.navigate(userToken ? 'Home' : 'Login');
-  };
+ 
   _onLogin = async ()=>{
-    // await AsyncStorage.setItem('userToken','1234');
-    // this.props.navigation.navigate('Home');
+    
     
     Animated.timing(                            // 随时间变化而执行的动画类型
       this.state.fadeAnim,                      // 动画中的变量值
@@ -52,9 +48,7 @@ class Home extends Component {
     });
   }
   componentDidMount(){
-    // console.log(this.refs.ss.setNativeProps({
-    //   source:require('../../assets/timg2.jpeg')
-    // }))
+    
     Animated.timing(                            // 随时间变化而执行的动画类型
       this.state.fadeAnim,                      // 动画中的变量值
       {
@@ -64,8 +58,10 @@ class Home extends Component {
     ).start();
 
   }
+  
   render() {
-    const userToken =  AsyncStorage.getItem('userToken');
+    let {device} = this.props;
+    console.log(device)
     return (
       <Animated.View                            // 可动画化的视图组件
         style={{
@@ -77,8 +73,9 @@ class Home extends Component {
             <View style={{display:'flex',width:'100%',height:'100%',alignItems:'center',justifyContent:'center'}} >
               <ThemeProvider>
                 <Button type='outline' buttonStyle={{marginBottom:10}} title="Switch Image!!"  onPress={this._onLogin}/>
-                <Button type='outline' buttonStyle={{marginTop:10}} title="Go to Home!!"  onPress={()=>{this.props.navigation.navigate(userToken ? 'Home' : 'Login');}}/>
+                <Button type='outline' buttonStyle={{marginTop:10}} title="Go to Home!!"  onPress={()=>{this.props.navigation.navigate('Home');}}/>
               </ThemeProvider>
+              <Text>{`${JSON.stringify(device)}`}</Text>
             </View>
           </ImageBackground>
         </View>

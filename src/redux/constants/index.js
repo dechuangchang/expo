@@ -3,7 +3,5 @@ export const MENULIST = 'MENULIST';
 export const SETTINGSHOW = 'SETTINGSHOW';
 export const DEFAULTMENUKEYS = 'DEFAULTMENUKEYS';
 export const LANGUAGE = 'LANGUAGE';
-
 export const GETCURRENCY = 'GETCURRENCY';
-
 export const FINDREWARDLIST = 'FINDREWARDLIST';

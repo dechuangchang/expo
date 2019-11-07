@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
-import {currencyList} from './common';
+import {device} from './device';
 
 const rootReducer = combineReducers({
-    currencyList,
+  device,
 });
 export default rootReducer
