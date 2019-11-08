@@ -1,3 +1,7 @@
+https://reactnative.cn/docs/0.47/navigation/
+https://reactnavigation.org/docs/zh-Hans/auth-flow.html
+https://docs.expo.io/versions/v35.0.0/react-native/asyncstorage/
+https://react-native-elements.github.io/react-native-elements/docs/tile.html
 open -a Simulator
 打开ios模拟器
 硬件” →“ 设备”，然后选择您要打开的iOS版本和设备。
